@@ -38,7 +38,7 @@ include 'includes/header.php';
 
 <div class="home-intro-content" style="margin-top: 40px;">
     <section class="seo-article">
-        <h2>Official Manipur Chart Hub</h2>
+        <h2>Official Manipur Chart Hub.....</h2>
         <p>Welcome to the most trusted destination for **Manipur Chart**, **Manipur Day**, and **Manipur Night** results. We provide the fastest updates for all major Satta Matka markets across India. Our professional dashboard is designed to give you real-time data at your fingertips.</p>
         
         <h3>Why Our Results Are Better?</h3>
