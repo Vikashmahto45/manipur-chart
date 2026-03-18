@@ -1,0 +1,22 @@
+# Premium Satta Matka Live Configuration
+# 1. Hide .php extensions for clean URLs
+RewriteEngine On
+
+# 1. Force remove trailing slash for SEO and path consistency
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# 2. Hide .php extensions for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# 2. Redirect index.php to root
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteRule ^index\.php$ / [R=301,L]
+
+# 3. Security: Prevent browsing of 'includes' folder
+Options -Indexes
+
+# 4. Custom Error Page
+ErrorDocument 404 /index.php
