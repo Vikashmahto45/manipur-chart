@@ -1,11 +1,24 @@
 <?php
 $main_keyword = "manipur chart official result";
-$page_title = "Manipur Chart - Fastest Satta Matka Result Site";
+$page_title = "Madhur Matka | Satta Matka | Manipur Chart | Madhur Bazar";
 $meta_description = "Welcome to Manipur Chart, the official and fastest portal for Satta Matka Manipur Day and Night results. Get live updates, historical data, and accurate matka charts.";
 
 include 'includes/db.php';
 include 'includes/header.php';
 ?>
+
+<div class="lucky-number-banner container" style="text-align: center; margin: 30px auto; padding: 25px; background: linear-gradient(135deg, #1e1e1e 0%, #2f3640 100%); border: 2px dashed var(--primary-color); border-radius: 12px; box-shadow: 0 5px 20px rgba(247,183,49,0.15);">
+    <h3 style="color: #fff; margin-bottom: 15px; font-size: 20px;">🔥 <span id="luckyCounter">15,482</span> People Checking Lucky Numbers Live</h3>
+    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 15px;">Get today's 100% free guaranteed passing Panna and Jodi numbers.</p>
+    <a href="lucky-number.php" class="refresh-btn pulse-glow" style="display: inline-block; text-decoration: none; font-size: 16px; padding: 15px 35px; border-radius: 30px;">GENERATE MY LUCKY NUMBER</a>
+    <script>
+        setInterval(function() {
+            let count = parseInt(document.getElementById('luckyCounter').innerText.replace(/,/g, ''));
+            count += Math.floor(Math.random() * 7) - 2; // Random fluctuation
+            document.getElementById('luckyCounter').innerText = count.toLocaleString();
+        }, 3500);
+    </script>
+</div>
 
 <section class="market-results-section">
     <div class="market-grid">
