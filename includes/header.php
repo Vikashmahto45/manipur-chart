@@ -9,9 +9,10 @@
     <!-- Premium Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <!-- Site Icon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="<?= isset($base_url) ? $base_url : '/' ?>assets/images/favicon.png">
     <!-- Canonical URL for SEO -->
     <?php
+    $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/manipur chart/' : '/';
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
     $host = $_SERVER['HTTP_HOST'];
     $uri = $_SERVER['REQUEST_URI'];
@@ -22,7 +23,7 @@
     if ($clean_uri == "/index" || $clean_uri == "/") { $canonical_url = "https://manipurchart.in/"; }
     ?>
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
     
     <!-- JSON-LD Schema for Google -->
     <script type="application/ld+json">
@@ -115,20 +116,20 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <a href="index">
+                <a href="<?= $base_url ?>index">
                     <h1><span class="highlight">MANIPUR</span> CHART</h1>
                     <span class="tagline">India's Fastest Satta Result</span>
                 </a>
             </div>
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="index">Home</a></li>
-                    <li><a href="panel-chart">Panel Chart</a></li>
-                    <li><a href="jodi-chart">Jodi Chart</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="/category/manipur-updates">Manipur Updates</a></li>
-                    <li><a href="manipur-day-chart">Day Result</a></li>
-                    <li><a href="manipur-night-chart">Night Result</a></li>
+                    <li><a href="<?= $base_url ?>index">Home</a></li>
+                    <li><a href="<?= $base_url ?>panel-chart">Panel Chart</a></li>
+                    <li><a href="<?= $base_url ?>jodi-chart">Jodi Chart</a></li>
+                    <li><a href="<?= $base_url ?>contact">Contact</a></li>
+                    <li><a href="<?= $base_url ?>category/manipur-updates">Manipur Updates</a></li>
+                    <li><a href="<?= $base_url ?>manipur-day-chart">Day Result</a></li>
+                    <li><a href="<?= $base_url ?>manipur-night-chart">Night Result</a></li>
                 </ul>
                 <div class="mobile-toggle">
                     <span></span>

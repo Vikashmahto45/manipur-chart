@@ -20,7 +20,7 @@
     <footer class="main-footer">
         <div class="container footer-content">
             <div class="footer-column brand-col">
-                <a href="/" class="footer-logo"><h2><span class="highlight">MANIPUR</span> CHART</h2></a>
+                <a href="<?= isset($base_url) ? $base_url : '/' ?>index" class="footer-logo"><h2><span class="highlight">MANIPUR</span> CHART</h2></a>
                 <p>Your premium source for India's fastest and most accurate Satta Matka, Manipur Day, and Night chart updates.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon">TG</a>
@@ -32,27 +32,27 @@
             <div class="footer-section">
                 <h3>Trending Result Links</h3>
                 <ul class="footer-links">
-                    <li><a href="panel-chart">Manipur Panel Chart</a></li>
-                    <li><a href="jodi-chart">Manipur Jodi Chart</a></li>
-                    <li><a href="old-record">Old Records Archive</a></li>
-                    <li><a href="how-to-check-manipur-night-result">Night Result Guide</a></li>
-                    <li><a href="manipur-satta-result-today">Morning & Day Results</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>panel-chart">Manipur Panel Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>jodi-chart">Manipur Jodi Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>old-record">Old Records Archive</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>how-to-check-manipur-night-result">Night Result Guide</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-satta-result-today">Morning & Day Results</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Quick Access</h3>
                 <ul class="footer-links">
-                    <li><a href="all-pages">All Pages List</a></li>
-                    <li><a href="fastest-manipur-result-website">Fastest Result Site</a></li>
-                    <li><a href="/category/manipur-updates">News Category</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>all-pages">All Pages List</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>fastest-manipur-result-website">Fastest Result Site</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>category/manipur-updates">News Category</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Official Info</h3>
                 <ul class="footer-links">
-                    <li><a href="privacy-policy">Privacy Policy</a></li>
-                    <li><a href="contact-us">Contact Us</a></li>
-                    <li><a href="disclaimer">Disclaimer</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>privacy-policy">Privacy Policy</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>contact">Contact Us</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>disclaimer">Disclaimer</a></li>
                 </ul>
             </div>
         </div>

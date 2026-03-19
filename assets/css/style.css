@@ -28,12 +28,16 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden; /* Solidify prevent horizontal scroll on mobile */
+}
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     line-height: 1.6;
     font-size: 16px;
-    overflow-x: hidden; /* Prevent horizontal scroll on mobile */
 }
 
 a {
@@ -72,13 +76,14 @@ h6 {
    Header & Navigation
    ========================================================================== */
 .main-header {
-    background-color: rgba(30, 30, 30, 0.95);
+    background-color: rgba(30, 30, 30, 0.98);
     border-bottom: 2px solid var(--primary-color);
     padding: 15px 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999999 !important; /* Forces header above injected floating ads */
     backdrop-filter: blur(10px);
+    width: 100%;
 }
 
 .main-header .container {
@@ -229,16 +234,20 @@ h6 {
 }
 
 .refresh-btn {
+    display: inline-block; /* Fixes background breaking across multiple lines on mobile */
+    text-align: center;
     background-color: var(--accent-color);
     color: #fff;
     border: none;
-    padding: 10px 25px;
+    padding: 12px 25px;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.2s, background 0.2s;
+    line-height: 1.4;
+    white-space: normal;
 }
 
 .refresh-btn:hover {
@@ -505,9 +514,16 @@ h6 {
 /* Responsive Wrappers */
 .ad-scroll-wrapper {
     width: 100%;
-    overflow-x: auto;
+    max-width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 15px;
+    text-align: center;
+}
+
+.ad-scroll-wrapper iframe {
+    max-width: 100% !important; /* Force inline ad frames not to cause weird clipping */
 }
 
 .ad-scroll-wrapper::-webkit-scrollbar {
