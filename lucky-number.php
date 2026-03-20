@@ -7,7 +7,7 @@ include 'includes/header.php';
 
 <div class="container main-content" style="min-height: 65vh; text-align: center;">
     
-    <div id="loader-section" style="margin-top: 60px; padding: 40px 20px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color);">
+    <div id="loader-section" style="margin-top: 60px; padding: 40px 20px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color); scroll-margin-top: 120px;">
         <h2 style="color: var(--primary-color); font-size: 32px; margin-bottom: 15px;">Calculating Your Lucky Numbers...</h2>
         <p style="color: var(--text-muted); margin: 0 auto 30px auto; font-size: 18px; max-width: 600px;">Our advanced system is deeply analyzing today's historical market trends and astrological charts to generate your exclusive highly probable Jodi and Panna.</p>
         
@@ -43,6 +43,16 @@ include 'includes/header.php';
 </div>
 
 <script>
+    // Smooth scroll to the loader section if redirected via button
+    window.addEventListener('DOMContentLoaded', () => {
+        if (window.location.hash === '#loader-section') {
+            const el = document.getElementById('loader-section');
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+
     let timeLeft = 15;
     let progress = 0;
     

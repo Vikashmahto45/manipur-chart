@@ -147,7 +147,7 @@
             <div class="lucky-number-banner container" style="text-align: center; margin: 15px auto; padding: 15px; background: linear-gradient(135deg, #1e1e1e 0%, #2f3640 100%); border: 2px dashed var(--primary-color); border-radius: 12px; box-shadow: 0 5px 20px rgba(247,183,49,0.15); max-width: 600px;">
                 <h3 style="color: #fff; margin-bottom: 8px; font-size: 16px;">🔥 <span id="luckyCounter">15,482</span> People Checking Lucky Numbers Live</h3>
                 <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 13px;">Get today's 100% free guaranteed passing Panna and Jodi.</p>
-                <a href="<?= $base_url ?>lucky-number.php" class="refresh-btn pulse-glow" style="display: inline-block; text-decoration: none; font-size: 14px; padding: 10px 25px; border-radius: 30px;">GENERATE MY LUCKY NUMBER</a>
+                <a href="<?= $base_url ?>lucky-number.php#loader-section" class="refresh-btn pulse-glow" style="display: inline-block; text-decoration: none; font-size: 14px; padding: 10px 25px; border-radius: 30px;">GENERATE MY LUCKY NUMBER</a>
                 <script>
                     setInterval(function() {
                         let count = parseInt(document.getElementById('luckyCounter').innerText.replace(/,/g, ''));
