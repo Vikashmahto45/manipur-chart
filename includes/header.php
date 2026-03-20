@@ -38,9 +38,7 @@
         "query-input": "required name=search_term_string"
     }
     </script>
-    <!-- Global Ad Scripts -->
-    <script src="https://pl28933431.effectivegatecpm.com/ba/e1/09/bae1094febaf62237af8346221ca6d05.js"></script>
-    <script src="https://pl28933476.effectivegatecpm.com/22/59/3a/22593acbabc4f510d6ba141acdc6f4ff.js"></script>
+
 </head>
 <body>
     <!-- Leaderboard Top Ad -->
