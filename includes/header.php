@@ -41,75 +41,6 @@
 
 </head>
 <body>
-    <!-- Leaderboard Top Ad -->
-    <div class="ad-scroll-wrapper">
-        <div class="ad-leaderboard" style="text-align: center; margin-bottom: 10px;">
-            <script>
-              atOptions = {
-                'key' : 'd08bec210dd46056115c79d8bf0d826f',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/d08bec210dd46056115c79d8bf0d826f/invoke.js"></script>
-        </div>
-    </div>
-
-    <!-- Wide Screen Side Ads -->
-    <div class="side-ad-left">
-        <!-- 160x300 -->
-        <script>
-          atOptions = {
-            'key' : 'bba173f7b118642e87b25af5ba220c64',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160,
-            'params' : {}
-          };
-        </script>
-        <script src="https://www.highperformanceformat.com/bba173f7b118642e87b25af5ba220c64/invoke.js"></script>
-        <!-- 160x600 -->
-        <div style="margin-top: 20px;">
-            <script>
-              atOptions = {
-                'key' : '3253294c961d924b41dd51f5c6fe5cee',
-                'format' : 'iframe',
-                'height' : 600,
-                'width' : 160,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/3253294c961d924b41dd51f5c6fe5cee/invoke.js"></script>
-        </div>
-    </div>
-    <div class="side-ad-right">
-        <!-- 160x300 -->
-        <script>
-          atOptions = {
-            'key' : 'bba173f7b118642e87b25af5ba220c64',
-            'format' : 'iframe',
-            'height' : 300,
-            'width' : 160,
-            'params' : {}
-          };
-        </script>
-        <script src="https://www.highperformanceformat.com/bba173f7b118642e87b25af5ba220c64/invoke.js"></script>
-        <!-- 160x600 -->
-        <div style="margin-top: 20px;">
-            <script>
-              atOptions = {
-                'key' : '3253294c961d924b41dd51f5c6fe5cee',
-                'format' : 'iframe',
-                'height' : 600,
-                'width' : 160,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/3253294c961d924b41dd51f5c6fe5cee/invoke.js"></script>
-        </div>
-    </div>
     
     <header class="main-header">
         <div class="container">
@@ -157,20 +88,6 @@
                 </script>
             </div>
 
-            <!-- Secondary Banner Ad -->
-            <div class="ad-scroll-wrapper">
-                <div class="ad-container-banner" style="text-align: center; margin-top: 15px;">
-                    <script>
-                      atOptions = {
-                        'key' : '5f0a7d8110cdf35cc94816ee9e7362d4',
-                        'format' : 'iframe',
-                        'height' : 60,
-                        'width' : 468,
-                        'params' : {}
-                      };
-                    </script>
-                    <script src="https://www.highperformanceformat.com/5f0a7d8110cdf35cc94816ee9e7362d4/invoke.js"></script>
-                </div>
             </div>
         </div>
     </div>
@@ -203,21 +120,7 @@
         </div>
     </section>
     
-    <!-- Top Ad Section -->
-    <div class="ad-scroll-wrapper">
-        <div class="ad-container" style="text-align: center; margin: 20px 0;">
-            <script>
-              atOptions = {
-                'key' : 'd99710d35499cc603560ae2396d5b25a',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/d99710d35499cc603560ae2396d5b25a/invoke.js"></script>
-        </div>
-    </div>
-
+    </section>
+    
     <main class="main-content">
         <div class="container">
