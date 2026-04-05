@@ -20,7 +20,10 @@
     <footer class="main-footer">
         <div class="container footer-content">
             <div class="footer-column brand-col">
-                <a href="<?= isset($base_url) ? $base_url : '/' ?>index" class="footer-logo"><h2><span class="highlight">MANIPUR</span> CHART</h2></a>
+                <a href="<?= isset($base_url) ? $base_url : '/' ?>index" class="footer-logo" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="<?= isset($base_url) ? $base_url : '/' ?>assets/images/download.png" alt="Manipur Chart Logo Small" style="height: 30px; width: auto; margin-right: 10px;">
+                    <h2 style="margin: 0;"><span class="highlight">MANIPUR</span> CHART</h2>
+                </a>
                 <p>Your premium source for India's fastest and most accurate Satta Matka, Manipur Day, and Night chart updates.</p>
                 <div class="social-links">
                     <a href="#" class="social-icon">TG</a>

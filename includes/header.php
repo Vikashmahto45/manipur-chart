@@ -20,7 +20,9 @@
     <!-- Premium Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <!-- Site Icon -->
-    <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/download.png">
+    <link rel="shortcut icon" href="<?= $base_url ?>assets/images/download.png">
+    <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/download.png">
     <!-- Canonical URL for SEO -->
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
@@ -46,9 +48,12 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <a href="<?= $base_url ?>index">
-                    <h1><span class="highlight">MANIPUR</span> CHART</h1>
-                    <span class="tagline">India's Fastest Satta Result</span>
+                <a href="<?= $base_url ?>index" style="display: flex; align-items: center; text-decoration: none;">
+                    <img src="<?= $base_url ?>assets/images/download.png" alt="Manipur Chart Logo" style="height: 50px; width: auto; margin-right: 15px;">
+                    <div>
+                        <h1 style="margin: 0;"><span class="highlight">MANIPUR</span> CHART</h1>
+                        <span class="tagline">India's Fastest Satta Result</span>
+                    </div>
                 </a>
             </div>
             <nav class="navbar">
