@@ -6,11 +6,6 @@
     <title><?= isset($page_title) ? $page_title : 'Manipur Chart Satta Matka Result' ?></title>
     <meta name="description" content="<?= isset($meta_description) ? $meta_description : 'Get the fastest and most accurate Manipur Chart and Satta Matka results online.' ?>">
     <meta name="keywords" content="<?= isset($main_keyword) ? $main_keyword : 'manipur chart' ?>, satta matka, manipur day, manipur night, kalyan result, matka guessing">
-    <!-- Premium Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-    <!-- Site Icon -->
-    <link rel="icon" type="image/png" href="<?= isset($base_url) ? $base_url : '/' ?>assets/images/favicon.png">
-    <!-- Canonical URL for SEO -->
     <?php
     $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/manipur chart/' : '/';
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
@@ -22,6 +17,11 @@
     // Special case for home page root
     if ($clean_uri == "/index" || $clean_uri == "/") { $canonical_url = "https://manipurchart.in/"; }
     ?>
+    <!-- Premium Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- Site Icon -->
+    <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/favicon.png">
+    <!-- Canonical URL for SEO -->
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
     
