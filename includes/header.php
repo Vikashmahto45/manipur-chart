@@ -36,6 +36,7 @@
         "@type": "SearchAction",
         "target": "https://manipurchart.in/all-pages?q={search_term_string}",
         "query-input": "required name=search_term_string"
+      }
     }
     </script>
 

@@ -48,6 +48,33 @@
                 </ul>
             </div>
             <div class="footer-section">
+                <h3>Top Manipur Chart Links</h3>
+                <ul class="footer-links">
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-night">Manipur Chart Night</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-result">Manipur Chart Result</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-guessing-chart">Manipur Guessing Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>satta-matta-matka-manipur-day-panel-chart">Matka Manipur Day Panel Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-rajdhani-night-chart">Manipur Rajdhani Night Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>satta-batta-manipur-chart">Satta Batta Manipur Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>satta-manipur-chart-day">Satta Manipur Chart Day</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-record-panal">Manipur Chart Record Panel</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>More Manipur Chart Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-satta-king">Manipur Chart Satta King</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-day-chart-live">Manipur Day Chart Live</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-day-game-chart">Manipur Day Game Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-day-matka-jodi-chart">Manipur Day Matka Jodi Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-day-patti-chart">Manipur Day Patti Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-live-chart">Manipur Live Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-open-to-close-chart">Manipur Open to Close Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-satta-bazar-chart">Manipur Satta Bazar Chart</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-satta-chart-today">Manipur Satta Chart Today</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
                 <h3>Official Info</h3>
                 <ul class="footer-links">
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>privacy-policy">Privacy Policy</a></li>

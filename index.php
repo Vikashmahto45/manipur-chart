@@ -55,9 +55,17 @@ include 'includes/header.php';
             </div>
         </div>
         
-        <p style="margin-top:20px; text-align:center;">
-            <a href="all-pages.php" class="refresh-btn" style="text-decoration:none;">View All Historical Charts & Archive</a>
-        </p>
+        <h3>Manipur Chart Quick Navigation</h3>
+        <div class="keyword-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 15px;">
+            <a href="manipur-chart-night" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Chart Night</a>
+            <a href="manipur-chart-result" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Chart Result</a>
+            <a href="manipur-guessing-chart" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Guessing Chart</a>
+            <a href="manipur-rajdhani-night-chart" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Rajdhani Night</a>
+            <a href="manipur-day-chart-live" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Day Chart Live</a>
+            <a href="manipur-live-chart" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Live Chart</a>
+            <a href="manipur-open-to-close-chart" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Open to Close</a>
+            <a href="manipur-satta-chart-today" class="refresh-btn" style="text-decoration:none; font-size: 13px; padding: 10px;">Manipur Satta Chart Today</a>
+        </div>
     </section>
 </div>
 
