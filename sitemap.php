@@ -1,24 +1,17 @@
 <?php
-$cache_file = __DIR__ . "/sitemap.xml";
-$cache_time = 86400; // 24 hours
+/**
+ * DYNAMIC SITEMAP ENGINE - (REAL-TIME ONLY / NO CACHE)
+ * Author: Antigravity AI
+ * Logic: Scans the root directory for physical .php files and generates SEO-ready XML.
+ */
 
-// 1. Check if cache exists and is fresh
-if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_time)) {
-    header("Content-Type: application/xml; charset=utf-8");
-    readfile($cache_file);
-    exit;
-}
-
-ob_start(); // Start buffer to capture XML
+// Force XML headers
 header("Content-Type: application/xml; charset=utf-8");
 
 $base_url = "https://manipurchart.in/";
 $directory = __DIR__;
 
-// Scanning all PHP files
-$files = glob($directory . "/*.php");
-
-// Define Exclusions (Utility Scripts / System Files)
+// Exclusions (Utility Scripts / System Files)
 $exclusions = [
     'sitemap.php',
     'db.php',
@@ -32,29 +25,38 @@ $exclusions = [
     'temp_get_urls.php',
     'update_batch.php',
     'test_db.php',
-    'check_missing.php'
+    'check_missing.php',
+    'full_file_list.txt',
+    'file_list_dump.txt',
+    'file_list_utf8.txt'
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 
+// 1. Scanning ONLY the current root directory
+$files = glob($directory . "/*.php");
+
 foreach ($files as $file) {
+    if (!is_file($file)) continue; // REALITY CHECK: File must physically exist
+
     $filename = basename($file);
-    if (in_array($filename, $exclusions)) continue;
+    
+    // Ignore exclusions and hidden files
+    if (in_array($filename, $exclusions) || $filename[0] === '.') continue;
     if (strpos($filename, 'process_') !== false) continue;
 
     $slug = str_replace('.php', '', $filename);
 
-    // --- ELITE STRICT FILTER ---
-    // 1. Reject if slug contains 'http' (Protocol contamination)
-    if (strpos($slug, 'http') !== false) continue;
+    // --- STRICT PROTOCOL FILTER ---
+    // Reject any filename that contains 'http' (Strips junk mistake files)
+    if (stripos($slug, 'http') !== false) continue;
     
-    // 2. Reject if slug is too long or empty (Sanity check)
-    if (strlen($slug) < 1 || strlen($slug) > 150) continue;
+    // Reject if slug contains dots (Protects against double extensions/routes)
+    if (strpos($slug, '.') !== false) continue;
     
-    // 3. Reject if filename contains double dots or weird characters
-    if (preg_match('/[\s\*\?\"\<\>\|]/', $slug)) continue;
-    // ----------------------------
+    // Sanity Check: Must be a string
+    if (empty($slug)) continue;
 
     $priority = "0.6";
     $changefreq = "weekly";
@@ -78,13 +80,6 @@ foreach ($files as $file) {
     echo "    <priority>" . $priority . "</priority>" . PHP_EOL;
     echo "  </url>" . PHP_EOL;
 }
+
 echo '</urlset>';
-
-$xml_content = ob_get_clean();
-
-// 2. Save to cache file for next visit
-file_put_contents($cache_file, $xml_content);
-
-// 3. Output XML
-echo $xml_content;
 ?>
