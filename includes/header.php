@@ -172,10 +172,29 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Visual Breadcrumbs for UX and SEO Dwell Time -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="<?= $base_url ?>index">Home</a></li>
+                <?php if ($clean_uri != "/index" && $clean_uri != "/"): ?>
+                    <li><span class="separator">/</span></li>
+                    <li><a href="<?= $base_url ?>all-pages">Archive</a></li>
+                    <li><span class="separator">/</span></li>
+                    <li class="active"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Current Chart' ?></li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </nav>
 
     <div class="hero-section">
         <div class="container">
-            <h1 class="dynamic-heading"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h1>
+            <?php if ($clean_uri == "/index" || $clean_uri == "/"): ?>
+                <h1 class="dynamic-heading"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h1>
+            <?php else: ?>
+                <h2 class="dynamic-heading"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h2>
+            <?php endif; ?>
             <p class="hero-subtext">Check live, accurate, and fastest updates for <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?> right here!</p>
             
             <div class="lucky-number-banner container" style="text-align: center; margin: 15px auto; padding: 15px; background: linear-gradient(135deg, #1e1e1e 0%, #2f3640 100%); border: 2px dashed var(--primary-color); border-radius: 12px; box-shadow: 0 5px 20px rgba(247,183,49,0.15); max-width: 600px;">

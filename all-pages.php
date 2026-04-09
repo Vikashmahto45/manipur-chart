@@ -21,21 +21,20 @@ include 'includes/header.php';
         <a href="contact" class="keyword-link" style="display: block; padding: 12px 20px; background: #fff; border: 1px solid #eee; border-radius: 8px; text-decoration: none; color: #444; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.02); font-weight: bold; border-left: 4px solid #c5a059;">Contact Official Team</a>
 
         <?php
-        $keywords = file('keyword.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        foreach ($keywords as $kw) {
-            $kw = trim($kw);
-            if ($kw === 'URL') continue;
+        $dir = __DIR__;
+        $files = glob($dir . "/*.php");
+        
+        foreach ($files as $f) {
+            $bn = basename($f);
             
-            // Extract slug from URL: https://manipurchart.in/slug
-            if (preg_match('/https:\/\/manipurchart\.in\/(.*)/', $kw, $matches)) {
-                $slug = $matches[1];
-                $linkText = str_replace('-', ' ', $slug);
-                
-                // Only show links for files that currently exist to avoid 404s
-                if (file_exists("$slug.php")) {
-                    echo '<a href="' . $slug . '" class="keyword-link" style="display: block; padding: 12px 20px; background: #fff; border: 1px solid #eee; border-radius: 8px; text-decoration: none; color: #444; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">' . ucwords($linkText) . '</a>';
-                }
-            }
+            // Skip system files and junk
+            if (in_array($bn, ['index.php', 'sitemap.php', 'all-pages.php', '404.php', 'purge_ghosts.php'])) continue;
+            if (strpos($bn, 'includes') !== false || strpos($bn, 'tools') !== false) continue;
+            if (strpos($bn, 'http') === 0) continue;
+
+            $slug = str_replace('.php', '', $bn);
+            $linkText = str_replace('-', ' ', $slug);
+            echo '<a href="' . $slug . '" class="keyword-link" style="display: block; padding: 12px 20px; background: #fff; border: 1px solid #eee; border-radius: 8px; text-decoration: none; color: #444; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">' . ucwords($linkText) . '</a>';
         }
         ?>
     </div>

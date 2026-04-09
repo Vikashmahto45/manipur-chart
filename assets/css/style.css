@@ -649,3 +649,61 @@ h6 {
         display: none;
     }
 }
+
+/* ==========================================================================
+   Breadcrumb Navigation Styles (Repaired)
+   ========================================================================== */
+.breadcrumb-container {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb-list {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.breadcrumb-list li {
+    display: flex !important;
+    align-items: center !important;
+    margin-right: 0 !important;
+}
+
+.breadcrumb-list li::before {
+    content: none !important; /* Kill any theme bullet points */
+}
+
+.breadcrumb-list a {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-list a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb-list .separator {
+    margin: 0 10px !important;
+    font-size: 10px;
+    color: #555;
+}
+
+.breadcrumb-list .active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .breadcrumb-list {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+}
