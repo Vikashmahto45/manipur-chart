@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+# Canonical Sitemap URL
 Sitemap: https://manipurchart.in/sitemap.xml

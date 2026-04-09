@@ -62,7 +62,8 @@ $how_text = getVariation($kw, $how_vars);
 
     <h3>Recent Historical Result Chart for <?= $kw ?></h3>
     <p>Below is the detailed record for <strong><?= $kw ?></strong> for the past week.</p>
-    <div class="table-responsive">
+    <div class="table-responsive" itemscope itemtype="https://schema.org/ItemList">
+        <meta itemprop="numberOfItems" content="7">
         <table class="info-table">
             <thead>
                 <tr>
@@ -81,7 +82,13 @@ $how_text = getVariation($kw, $how_vars);
                     $p1 = rand(100, 999);
                     $j = str_pad(rand(0, 99), 2, '0', STR_PAD_LEFT);
                     $p2 = rand(100, 999);
-                    echo "<tr><td>$date</td><td>$p1</td><td><strong style='color:var(--primary-color)'>$j</strong></td><td>$p2</td></tr>";
+                    echo "<tr itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                            <meta itemprop='position' content='".($i+1)."'>
+                            <td itemprop='name'>$date</td>
+                            <td>$p1</td>
+                            <td><strong style='color:var(--primary-color)'>$j</strong></td>
+                            <td>$p2</td>
+                          </tr>";
                 }
                 srand();
                 ?>

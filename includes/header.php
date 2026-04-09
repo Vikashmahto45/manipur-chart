@@ -6,35 +6,65 @@
     <title><?= isset($page_title) ? $page_title : 'Manipur Chart Satta Matka Result' ?></title>
     <meta name="description" content="<?= isset($meta_description) ? $meta_description : 'Get the fastest and most accurate Manipur Chart and Satta Matka results online.' ?>">
     <meta name="keywords" content="<?= isset($main_keyword) ? $main_keyword : 'manipur chart' ?>, satta matka, manipur day, manipur night, kalyan result, matka guessing">
+    
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manipurchart.in/">
+    <meta property="og:title" content="<?= isset($page_title) ? $page_title : 'Manipur Chart Official' ?>">
+    <meta property="og:description" content="<?= isset($meta_description) ? $meta_description : 'The fastest source for Manipur Chart and Satta results.' ?>">
+    <meta property="og:image" content="https://manipurchart.in/assets/images/download.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= isset($page_title) ? $page_title : 'Manipur Chart Official' ?>">
+    <meta name="twitter:description" content="<?= isset($meta_description) ? $meta_description : 'The fastest source for Manipur Chart and Satta results.' ?>">
+    <meta name="twitter:image" content="https://manipurchart.in/assets/images/download.png">
+
     <?php
     $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/manipur chart/' : '/';
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
     $host = $_SERVER['HTTP_HOST'];
     $uri = $_SERVER['REQUEST_URI'];
+    
     // Strip query strings and .php extension for canonical
     $clean_uri = preg_replace('/\.php$/', '', explode('?', $uri)[0]);
     $canonical_url = "https://manipurchart.in" . $clean_uri;
     
-    // Consolidation Strategy: Point all Manipur-related sub-pages to the Home Page
-    // to build 'Super Authority' on the main domain.
-    if (isset($main_keyword) && (strpos(strtolower($main_keyword), 'manipur') !== false) && $clean_uri != "/index" && $clean_uri != "/") {
+    // Hybrid Strategy: Only point exact duplicates or thin pages to home.
+    // High-value sub-pages like Night/Panel charts should be self-referencing to rank.
+    $self_ranking_pages = ['manipur-chart-night', 'panel-chart', 'jodi-chart', 'manipur-day-chart'];
+    $current_page = str_replace(['/manipur chart/', '/'], '', $clean_uri);
+    
+    if ($clean_uri == "/index" || $clean_uri == "/") {
+        $canonical_url = "https://manipurchart.in/";
+    } elseif (!in_array($current_page, $self_ranking_pages)) {
+        // Consolidate 'lesser' pages to build main authority
         $canonical_url = "https://manipurchart.in/";
     }
-    
-    // Special case for home page root
-    if ($clean_uri == "/index" || $clean_uri == "/") { $canonical_url = "https://manipurchart.in/"; }
     ?>
-    <!-- Premium Google Fonts -->
+    
+    <!-- Performance: Preload Critical Assets -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-    <!-- Site Icon -->
+    
     <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/download.png">
     <link rel="shortcut icon" href="<?= $base_url ?>assets/images/download.png">
     <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/download.png">
-    <!-- Canonical URL for SEO -->
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
     
-    <!-- JSON-LD Schema for Google -->
+    <!-- JSON-LD Core Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Manipur Chart Official",
+      "url": "https://manipurchart.in/",
+      "logo": "https://manipurchart.in/assets/images/download.png",
+      "sameAs": [
+        "https://t.me/manipurchart",
+        "https://youtube.com/@manipurchart"
+      ]
+    }
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -80,7 +110,7 @@
                     </div>
                 </a>
             </div>
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Main Navigation">
                 <ul class="nav-links">
                     <li><a href="<?= $base_url ?>index">Home</a></li>
                     <li><a href="<?= $base_url ?>panel-chart">Panel Chart</a></li>
@@ -90,7 +120,7 @@
                     <li><a href="<?= $base_url ?>manipur-day-chart">Day Result</a></li>
                     <li><a href="<?= $base_url ?>manipur-night-chart">Night Result</a></li>
                 </ul>
-                <div class="mobile-toggle">
+                <div class="mobile-toggle" aria-label="Toggle Menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -104,7 +134,6 @@
             <h1 class="dynamic-heading"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h1>
             <p class="hero-subtext">Check live, accurate, and fastest updates for <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?> right here!</p>
             
-            <!-- Lucky Number Hook -->
             <div class="lucky-number-banner container" style="text-align: center; margin: 15px auto; padding: 15px; background: linear-gradient(135deg, #1e1e1e 0%, #2f3640 100%); border: 2px dashed var(--primary-color); border-radius: 12px; box-shadow: 0 5px 20px rgba(247,183,49,0.15); max-width: 600px;">
                 <h3 style="color: #fff; margin-bottom: 8px; font-size: 16px;">🔥 <span id="luckyCounter">15,482</span> People Checking Lucky Numbers Live</h3>
                 <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 13px;">Get today's 100% free guaranteed passing Panna and Jodi.</p>
@@ -118,20 +147,18 @@
                 </script>
             </div>
 
-            </div>
         </div>
     </div>
 
-    <!-- Live Result Section -->
+    <!-- Live Result Section: Fetches Latest Result for "Freshness" Signal -->
     <section class="live-result-board">
         <div class="container">
             <?php
-            // Fetch live result from database
             $live_data = null;
             if (isset($conn) && !($conn->connect_error)) {
                 try {
-                    // Pick a random market to show in the live board to make it feel dynamic
-                    $q = $conn->query("SELECT * FROM live_results ORDER BY RAND() LIMIT 1");
+                    // Logic: Get the MOST RECENT updated market to signal freshness to Googlebot
+                    $q = $conn->query("SELECT * FROM live_results ORDER BY id DESC LIMIT 1");
                     if ($q && $q->num_rows > 0) {
                         $live_data = $q->fetch_assoc();
                     }
@@ -139,18 +166,17 @@
             }
             ?>
             <div class="result-card pulse-glow">
-                <h3><?= $live_data ? $live_data['market_name'] . ' LIVE' : 'MANIPUR DAY LIVE' ?></h3>
+                <h3><?= $live_data ? $live_data['market_name'] . ' LATEST' : 'LIVE UPDATES' ?></h3>
                 <div class="live-numbers">
-                    <span class="panel"><?= $live_data ? $live_data['open_panna'] : '346' ?></span>-
-                    <span class="jodi"><?= $live_data ? $live_data['jodi'] : '38' ?></span>-
-                    <span class="panel"><?= $live_data ? $live_data['close_panna'] : '279' ?></span>
+                    <span class="panel"><?= $live_data ? $live_data['open_panna'] : '---' ?></span>-
+                    <span class="jodi"><?= $live_data ? $live_data['jodi'] : '--' ?></span>-
+                    <span class="panel"><?= $live_data ? $live_data['close_panna'] : '---' ?></span>
                 </div>
                 <button class="refresh-btn" onclick="window.location.reload();">Refresh Result ↻</button>
             </div>
         </div>
     </section>
     
-    </section>
-    
     <main class="main-content">
         <div class="container">
+
