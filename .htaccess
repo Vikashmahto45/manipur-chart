@@ -1,5 +1,8 @@
 # Premium Satta Matka Live Configuration
 
+# SEO Routing: Dynamic Sitemap
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
 # 1. Performance: Enable Gzip Compression (mod_deflate)
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
@@ -34,6 +37,7 @@
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "no-referrer-when-downgrade"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
 # 4. Hide .php extensions for clean URLs
