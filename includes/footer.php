@@ -21,18 +21,18 @@
         <div class="container footer-content">
             <div class="footer-column brand-col">
                 <a href="<?= isset($base_url) ? $base_url : '/' ?>index" class="footer-logo" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="<?= isset($base_url) ? $base_url : '/' ?>assets/images/download.png" alt="Manipur Chart Logo Small" style="height: 30px; width: auto; margin-right: 10px;">
+                    <img src="<?= isset($base_url) ? $base_url : '/' ?>assets/images/download.png" alt="Manipur Chart Official Logo" style="height: 30px; width: auto; margin-right: 10px;">
                     <h2 style="margin: 0;"><span class="highlight">MANIPUR</span> CHART</h2>
                 </a>
                 <p>Your premium source for India's fastest and most accurate Satta Matka, Manipur Day, and Night chart updates.</p>
                 <div class="social-links">
-                    <a href="#" class="social-icon">TG</a>
-                    <a href="#" class="social-icon">WA</a>
-                    <a href="#" class="social-icon">YT</a>
+                    <a href="https://t.me/manipurchart" class="social-icon" aria-label="Telegram Channel">TG</a>
+                    <a href="https://wa.me/yournumber" class="social-icon" aria-label="WhatsApp Updates">WA</a>
+                    <a href="https://youtube.com/@manipurchart" class="social-icon" aria-label="YouTube Channel">YT</a>
                 </div>
             </div>
             
-            <div class="footer-section">
+            <nav class="footer-section" aria-label="Trending Results">
                 <h3>Trending Result Links</h3>
                 <ul class="footer-links">
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>panel-chart">Manipur Panel Chart</a></li>
@@ -41,16 +41,17 @@
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>how-to-check-manipur-night-result">Night Result Guide</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-satta-result-today">Morning & Day Results</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
+            </nav>
+            <nav class="footer-section" aria-label="Quick Navigation">
                 <h3>Quick Access</h3>
                 <ul class="footer-links">
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>all-pages">All Pages List</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>fastest-manipur-result-website">Fastest Result Site</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>category/manipur-updates">News Category</a></li>
+                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>contact">Contact Us</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
+            </nav>
+            <nav class="footer-section" aria-label="Top Chart Resources">
                 <h3>Top Manipur Chart Links</h3>
                 <ul class="footer-links">
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-night">Manipur Chart Night</a></li>
@@ -62,9 +63,9 @@
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>satta-manipur-chart-day">Satta Manipur Chart Day</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-record-panal">Manipur Chart Record Panel</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h3>More Manipur Chart Resources</h3>
+            </nav>
+            <nav class="footer-section" aria-label="Regional Charts">
+                <h3>Regional Market Resources</h3>
                 <ul class="footer-links">
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-chart-satta-king">Manipur Chart Satta King</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-day-chart-live">Manipur Day Chart Live</a></li>
@@ -74,17 +75,15 @@
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-live-chart">Manipur Live Chart</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-open-to-close-chart">Manipur Open to Close Chart</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-satta-bazar-chart">Manipur Satta Bazar Chart</a></li>
-                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>manipur-satta-chart-today">Manipur Satta Chart Today</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
+            </nav>
+            <nav class="footer-section" aria-label="Legal and Privacy">
                 <h3>Official Info</h3>
                 <ul class="footer-links">
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>privacy-policy">Privacy Policy</a></li>
-                    <li><a href="<?= isset($base_url) ? $base_url : '/' ?>contact">Contact Us</a></li>
                     <li><a href="<?= isset($base_url) ? $base_url : '/' ?>disclaimer">Disclaimer</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
         
         <div class="footer-bottom">

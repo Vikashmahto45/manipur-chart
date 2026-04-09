@@ -10,13 +10,18 @@
     <!-- OpenGraph / Social Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://manipurchart.in/">
+    <meta property="og:site_name" content="Manipur Chart Official">
+    <meta property="og:locale" content="en_IN">
     <meta property="og:title" content="<?= isset($page_title) ? $page_title : 'Manipur Chart Official' ?>">
     <meta property="og:description" content="<?= isset($meta_description) ? $meta_description : 'The fastest source for Manipur Chart and Satta results.' ?>">
-    <meta property="og:image" content="https://manipurchart.in/assets/images/download.png">
+    <meta property="og:image" content="https://manipurchart.in/assets/images/icon-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= isset($page_title) ? $page_title : 'Manipur Chart Official' ?>">
     <meta name="twitter:description" content="<?= isset($meta_description) ? $meta_description : 'The fastest source for Manipur Chart and Satta results.' ?>">
-    <meta name="twitter:image" content="https://manipurchart.in/assets/images/download.png">
+    <meta name="twitter:image" content="https://manipurchart.in/assets/images/icon-512.png">
 
     <?php
     $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/manipur chart/' : '/';
@@ -41,17 +46,60 @@
     }
     ?>
     
+    <!-- Resource Hints: Optimized for Core Web Vitals (INP/LCP/FCP) -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.highperformanceformat.com">
+    <link rel="dns-prefetch" href="https://t.me">
+    <link rel="dns-prefetch" href="https://youtube.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.highperformanceformat.com" crossorigin>
+    
     <!-- Performance: Preload Critical Assets -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" as="style">
+    <link rel="preload" href="<?= $base_url ?>assets/css/style.css" as="style">
+    
+    <!-- Predictive Prefetch: Speed up next user navigation -->
+    <link rel="prefetch" href="<?= $base_url ?>manipur-chart-night">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     
     <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/download.png">
     <link rel="shortcut icon" href="<?= $base_url ?>assets/images/download.png">
-    <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/download.png">
+    <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/icon-192.png">
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css">
     
+    <!-- PWA & Mobile Optimization -->
+    <meta name="theme-color" content="#1e1e1e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Manipur Chart">
+    <link rel="manifest" href="<?= $base_url ?>manifest.json">
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('<?= $base_url ?>sw.js')
+                .then(reg => console.log('Service Worker Registered'))
+                .catch(err => console.log('Service Worker Failed', err));
+        });
+    }
+    </script>
+
     <!-- JSON-LD Core Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".live-result-board h3", ".live-numbers"]
+      },
+      "name": "Manipur Chart Live Results",
+      "description": "Here is the latest Manipur Chart result for today..."
+    }
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
