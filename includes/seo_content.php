@@ -89,15 +89,27 @@ $how_text = getVariation($kw, $how_vars);
         </table>
     </div>
 
-    <div class="faq-wrap">
-        <h3>FAQs</h3>
-        <div class="faq-item">
-            <h4>What is the fastest way to get the <?= $kw ?>?</h4>
-            <p>Bookmark this page and refresh during declaration times. Our servers update instantly.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Is the data 100% accurate?</h4>
-            <p>Yes, we verify every number against official sources to guarantee integrity.</p>
-        </div>
     </div>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the fastest way to get the <?= $kw ?>?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bookmark this page and refresh during declaration times. Our servers are optimized to reflect official results instantly."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Is the <?= $kw ?> data on this site accurate?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, we verify every number against official declaration sources to ensure 100% integrity and accuracy for all players."
+    }
+  }]
+}
+</script>

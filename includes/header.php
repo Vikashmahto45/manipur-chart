@@ -14,6 +14,13 @@
     // Strip query strings and .php extension for canonical
     $clean_uri = preg_replace('/\.php$/', '', explode('?', $uri)[0]);
     $canonical_url = "https://manipurchart.in" . $clean_uri;
+    
+    // Consolidation Strategy: Point all Manipur-related sub-pages to the Home Page
+    // to build 'Super Authority' on the main domain.
+    if (isset($main_keyword) && (strpos(strtolower($main_keyword), 'manipur') !== false) && $clean_uri != "/index" && $clean_uri != "/") {
+        $canonical_url = "https://manipurchart.in/";
+    }
+    
     // Special case for home page root
     if ($clean_uri == "/index" || $clean_uri == "/") { $canonical_url = "https://manipurchart.in/"; }
     ?>
@@ -41,6 +48,23 @@
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://manipurchart.in/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "<?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?>",
+        "item": "<?= $canonical_url ?>"
+      }]
+    }
+    </script>
 
 </head>
 <body>
@@ -51,7 +75,7 @@
                 <a href="<?= $base_url ?>index" style="display: flex; align-items: center; text-decoration: none;">
                     <img src="<?= $base_url ?>assets/images/download.png" alt="Manipur Chart Logo" style="height: 50px; width: auto; margin-right: 15px;">
                     <div>
-                        <h1 style="margin: 0;"><span class="highlight">MANIPUR</span> CHART</h1>
+                        <div class="site-title" style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 24px; color: #fff;"><span class="highlight">MANIPUR</span> CHART</div>
                         <span class="tagline">India's Fastest Satta Result</span>
                     </div>
                 </a>
@@ -77,7 +101,7 @@
 
     <div class="hero-section">
         <div class="container">
-            <h2 class="dynamic-heading"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h2>
+            <h1 class="dynamic-heading"><?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h1>
             <p class="hero-subtext">Check live, accurate, and fastest updates for <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?> right here!</p>
             
             <!-- Lucky Number Hook -->
