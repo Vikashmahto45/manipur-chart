@@ -1,13 +1,24 @@
 <?php
+$cache_file = __DIR__ . "/sitemap.xml";
+$cache_time = 86400; // 24 hours
+
+// 1. Check if cache exists and is fresh
+if (file_exists($cache_file) && (time() - filemtime($cache_file) < $cache_time)) {
+    header("Content-Type: application/xml; charset=utf-8");
+    readfile($cache_file);
+    exit;
+}
+
+ob_start(); // Start buffer to capture XML
 header("Content-Type: application/xml; charset=utf-8");
 
 $base_url = "https://manipurchart.in/";
 $directory = __DIR__;
 
-// 1. Scan all PHP files in the root directory
+// Scanning all PHP files
 $files = glob($directory . "/*.php");
 
-// 2. Define Exclusions (Utility Scripts / System Files)
+// Define Exclusions (Utility Scripts / System Files)
 $exclusions = [
     'sitemap.php',
     'db.php',
@@ -29,17 +40,10 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 
 foreach ($files as $file) {
     $filename = basename($file);
-    
-    // Skip exclusions
     if (in_array($filename, $exclusions)) continue;
-    
-    // Skip secondary result files that might be thin
     if (strpos($filename, 'process_') !== false) continue;
 
-    // Build the URL slug
     $slug = str_replace('.php', '', $filename);
-    
-    // Priority Logic
     $priority = "0.6";
     $changefreq = "weekly";
     
@@ -49,8 +53,6 @@ foreach ($files as $file) {
         $changefreq = "always";
     } else {
         $url = $base_url . $slug;
-        
-        // High-value chart pages get higher priority
         if (strpos($slug, 'chart') !== false || strpos($slug, 'result') !== false) {
             $priority = "0.8";
             $changefreq = "daily";
@@ -64,6 +66,13 @@ foreach ($files as $file) {
     echo "    <priority>" . $priority . "</priority>" . PHP_EOL;
     echo "  </url>" . PHP_EOL;
 }
-
 echo '</urlset>';
+
+$xml_content = ob_get_clean();
+
+// 2. Save to cache file for next visit
+file_put_contents($cache_file, $xml_content);
+
+// 3. Output XML
+echo $xml_content;
 ?>

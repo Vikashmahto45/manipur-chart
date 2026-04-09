@@ -14,14 +14,14 @@
     <meta property="og:locale" content="en_IN">
     <meta property="og:title" content="<?= isset($page_title) ? $page_title : 'Manipur Chart Official' ?>">
     <meta property="og:description" content="<?= isset($meta_description) ? $meta_description : 'The fastest source for Manipur Chart and Satta results.' ?>">
-    <meta property="og:image" content="https://manipurchart.in/assets/images/icon-512.png">
+    <meta property="og:image" content="https://manipurchart.in/assets/images/icon-512.webp">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
-    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:type" content="image/webp">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= isset($page_title) ? $page_title : 'Manipur Chart Official' ?>">
     <meta name="twitter:description" content="<?= isset($meta_description) ? $meta_description : 'The fastest source for Manipur Chart and Satta results.' ?>">
-    <meta name="twitter:image" content="https://manipurchart.in/assets/images/icon-512.png">
+    <meta name="twitter:image" content="https://manipurchart.in/assets/images/icon-512.webp">
 
     <?php
     $base_url = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) ? '/manipur chart/' : '/';
