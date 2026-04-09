@@ -1,4 +1,5 @@
         </div> <!-- end container inner content -->
+        <?php include 'includes/contextual_links.php'; ?>
     </main>
 
     <!-- Bottom Ad Section -->

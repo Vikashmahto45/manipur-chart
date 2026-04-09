@@ -33,16 +33,12 @@
     $clean_uri = preg_replace('/\.php$/', '', explode('?', $uri)[0]);
     $canonical_url = "https://manipurchart.in" . $clean_uri;
     
-    // Hybrid Strategy: Only point exact duplicates or thin pages to home.
-    // High-value sub-pages like Night/Panel charts should be self-referencing to rank.
-    $self_ranking_pages = ['manipur-chart-night', 'panel-chart', 'jodi-chart', 'manipur-day-chart'];
-    $current_page = str_replace(['/manipur chart/', '/'], '', $clean_uri);
-    
+    // Final Ranking Logic: Self-referencing canonical for all valid chart/year pages.
+    // This allows every individual year (2013, 2014, etc.) to index and rank on Google.
     if ($clean_uri == "/index" || $clean_uri == "/") {
         $canonical_url = "https://manipurchart.in/";
-    } elseif (!in_array($current_page, $self_ranking_pages)) {
-        // Consolidate 'lesser' pages to build main authority
-        $canonical_url = "https://manipurchart.in/";
+    } else {
+        $canonical_url = "https://manipurchart.in" . $clean_uri;
     }
     ?>
     
