@@ -44,6 +44,18 @@ foreach ($files as $file) {
     if (strpos($filename, 'process_') !== false) continue;
 
     $slug = str_replace('.php', '', $filename);
+
+    // --- ELITE STRICT FILTER ---
+    // 1. Reject if slug contains 'http' (Protocol contamination)
+    if (strpos($slug, 'http') !== false) continue;
+    
+    // 2. Reject if slug is too long or empty (Sanity check)
+    if (strlen($slug) < 1 || strlen($slug) > 150) continue;
+    
+    // 3. Reject if filename contains double dots or weird characters
+    if (preg_match('/[\s\*\?\"\<\>\|]/', $slug)) continue;
+    // ----------------------------
+
     $priority = "0.6";
     $changefreq = "weekly";
     
