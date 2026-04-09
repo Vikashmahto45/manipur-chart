@@ -64,7 +64,7 @@
     <link rel="shortcut icon" href="<?= $base_url ?>assets/images/download.png">
     <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/icon-192.png">
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
-    <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.min.css">
+    <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css?v=3.0">
     
     <!-- PWA & Mobile Optimization -->
     <meta name="theme-color" content="#1e1e1e">
