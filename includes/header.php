@@ -122,6 +122,34 @@
       "description": "Here is the latest Manipur Chart result for today..."
     }
     </script>
+
+    <?php
+    // --- SERP NINJA: SpecialAnnouncement Schema ---
+    // This forces Google to see live results in a machine-readable format for Rich Snippets.
+    if (isset($conn) && !($conn->connect_error)) {
+        $recent_res = $conn->query("SELECT * FROM live_results ORDER BY id DESC LIMIT 1");
+        if ($recent_res && $recent_res->num_rows > 0) {
+            $r = $recent_res->fetch_assoc();
+            $full_res = $r['open_panna'] . "-" . $r['jodi'] . "-" . $r['close_panna'];
+            $update_date = date('c'); 
+            ?>
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "SpecialAnnouncement",
+              "name": "<?= $r['market_name'] ?> Live Result",
+              "text": "Latest Result: <?= $full_res ?>",
+              "datePosted": "<?= $update_date ?>",
+              "announcementLocation": {
+                "@type": "Place",
+                "name": "Manipur Chart Official"
+              }
+            }
+            </script>
+            <?php
+        }
+    }
+    ?>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
