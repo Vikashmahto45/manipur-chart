@@ -88,6 +88,37 @@ include 'includes/header.php';
         }
         ?>
     </div>
+
+    <!-- ELITE PLAYER UTILITIES: DRIVES DWELL TIME & AUTHORITY -->
+    <div class="utility-hub"
+        style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, rgba(30,30,30,0.8) 0%, rgba(47,54,64,0.8) 100%); border: 1px solid rgba(247,183,49,0.2); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <h2
+            style="color: var(--accent); font-family: 'Orbitron', sans-serif; font-size: 20px; text-align: center; margin-bottom: 25px;">
+            💎 PREDICTIVE ANALYTICS & EXPERT TOOLS</h2>
+        <div class="tool-grid"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <!-- Panna Converter Card -->
+            <div class="tool-card"
+                style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; transition: transform 0.3s ease;">
+                <h3 style="color: #fff; font-size: 17px; margin-bottom: 10px;">Panna To Jodi Converter</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Calculate exact Jodi families
+                    and Matka pairs from any Panna instantly.</p>
+                <a href="tools/panna-converter" class="refresh-btn"
+                    style="display: inline-block; text-decoration: none; padding: 10px 20px; font-size: 13px;">OPEN
+                    CONVERTER</a>
+            </div>
+            <!-- Vedic Guessing Card -->
+            <div class="tool-card"
+                style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; transition: transform 0.3s ease;">
+                <h3 style="color: #fff; font-size: 17px; margin-bottom: 10px;">Vedic Guessing Engine</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Unlock astrology-based lucky
+                    numbers using your name and birth numerology.</p>
+                <a href="tools/vedic-guessing" class="refresh-btn"
+                    style="display: inline-block; text-decoration: none; padding: 10px 20px; font-size: 13px;">ACCESS
+                    VEDIC AI</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <div class="home-intro-content" style="margin-top: 40px;">
