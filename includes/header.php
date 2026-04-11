@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+// --- SILENT ROBOT TRIGGER: HANDS-OFF AUTOMATION ---
+if (isset($conn) && !($conn->connect_error)) {
+    require_once __DIR__ . '/harvester.php';
+    syncLiveResults($conn);
+}
+?>
 <html lang="en">
 
 <head>
