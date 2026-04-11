@@ -7,6 +7,12 @@ include 'includes/db.php';
 include 'includes/header.php';
 ?>
 
+<!-- DEPLOYMENT TEST: VERIFY CONNECTION -->
+<div
+    style="background: red; color: white; padding: 10px; text-align: center; font-weight: bold; position: fixed; top: 0; width: 100%; z-index: 9999;">
+    DEPLOYMENT TEST ACTIVE - VERSION 5.0
+</div>
+
 <section class="market-results-section">
     <!-- ELITE SEO: Live Countdown Timer (Increases Dwell Time) -->
     <div class="countdown-container"
