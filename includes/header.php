@@ -156,6 +156,38 @@ if (isset($conn) && !($conn->connect_error)) {
             <?php
         }
     }
+
+    // --- ELITE SEO: FAQ Schema (Homepage Only) ---
+    // This allows your site to take up 2x more space in Google Search with expandable questions.
+    $current_page = basename($_SERVER['PHP_SELF']);
+    if ($current_page == 'index.php') {
+        ?>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How often are Manipur Chart results updated?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Results are updated instantly every time a market opens or closes. We provide 24/7 automated updates for Manipur Day and Night sessions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the Manipur Night chart 100% accurate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our Manipur Night records and Panel Charts are verified against official records to ensure 100% historical accuracy for all players."
+              }
+            }
+          ]
+        }
+        </script>
+        <?php
+    }
     ?>
     <script type="application/ld+json">
     {

@@ -8,6 +8,60 @@ include 'includes/header.php';
 ?>
 
 <section class="market-results-section">
+    <!-- ELITE SEO: Live Countdown Timer (Increases Dwell Time) -->
+    <div class="countdown-container"
+        style="background: rgba(43, 84, 126, 0.1); border-left: 4px solid var(--accent); padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+        <h3 style="margin: 0; font-size: 16px; color: var(--accent);">NEXT MARKET DRAW</h3>
+        <div id="market-timer"
+            style="font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin-top: 5px;">
+            00:00:00</div>
+        <p id="timer-label" style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.8;">Manipur Day update in progress...
+        </p>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            // Target Times (Indian Standard Time)
+            const targets = [
+                { name: "Manipur Day", hour: 12, min: 0 },
+                { name: "Manipur Night", hour: 20, min: 0 }
+            ];
+
+            const now = new Date();
+            let next = null;
+            let minDiff = Infinity;
+
+            targets.forEach(t => {
+                let targetDate = new Date(now);
+                targetDate.setHours(t.hour, t.min, 0, 0);
+
+                if (targetDate < now) {
+                    targetDate.setDate(targetDate.getDate() + 1);
+                }
+
+                let diff = targetDate - now;
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    next = t;
+                }
+            });
+
+            if (next) {
+                const h = Math.floor(minDiff / (1000 * 60 * 60));
+                const m = Math.floor((minDiff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((minDiff % (1000 * 60)) / 1000);
+
+                document.getElementById('market-timer').innerText =
+                    String(h).padStart(2, '0') + ":" +
+                    String(m).padStart(2, '0') + ":" +
+                    String(s).padStart(2, '0');
+                document.getElementById('timer-label').innerText = "Next Update: " + next.name;
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
     <div class="market-grid">
         <?php
         // Fetch all markets from database
