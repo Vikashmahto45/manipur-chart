@@ -38,39 +38,50 @@ echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 $files = glob($directory . "/*.php");
 
 foreach ($files as $file) {
-    if (!is_file($file)) continue; // REALITY CHECK: File must physically exist
+    if (!is_file($file))
+        continue; // REALITY CHECK: File must physically exist
 
     $filename = basename($file);
-    
+
     // Ignore exclusions and hidden files
-    if (in_array($filename, $exclusions) || $filename[0] === '.') continue;
-    if (strpos($filename, 'process_') !== false) continue;
+    if (in_array($filename, $exclusions) || $filename[0] === '.')
+        continue;
+    if (strpos($filename, 'process_') !== false)
+        continue;
 
     $slug = str_replace('.php', '', $filename);
 
     // --- STRICT PROTOCOL FILTER ---
     // Reject any filename that contains 'http' (Strips junk mistake files)
-    if (stripos($slug, 'http') !== false) continue;
-    
-    // Reject if slug contains dots (Protects against double extensions/routes)
-    if (strpos($slug, '.') !== false) continue;
-    
-    // Sanity Check: Must be a string
-    if (empty($slug)) continue;
+    if (stripos($slug, 'http') !== false)
+        continue;
 
+    // Reject if slug contains dots (Protects against double extensions/routes)
+    if (strpos($slug, '.') !== false)
+        continue;
+
+    // Sanity Check: Must be a string
+    if (empty($slug))
+        continue;
+
+    // --- SITEMAP RECOVERY PRIORITIES ---
     $priority = "0.6";
     $changefreq = "weekly";
-    
+
+    $whitelist_slugs = ['index', 'manipur-chart-night', 'manipur-day-chart', 'panel-chart', 'jodi-chart', 'all-pages'];
+
     if ($slug == "index") {
         $url = $base_url;
         $priority = "1.0";
         $changefreq = "always";
+    } elseif (in_array($slug, $whitelist_slugs)) {
+        $url = $base_url . $slug;
+        $priority = "0.9"; // Core Authority Pages
+        $changefreq = "daily";
     } else {
         $url = $base_url . $slug;
-        if (strpos($slug, 'chart') !== false || strpos($slug, 'result') !== false) {
-            $priority = "0.8";
-            $changefreq = "daily";
-        }
+        $priority = "0.4"; // Low priority during recovery
+        $changefreq = "monthly";
     }
 
     echo "  <url>" . PHP_EOL;
