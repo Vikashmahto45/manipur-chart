@@ -1,7 +1,7 @@
 <?php
 $main_keyword = "manipur chart official";
 $page_title = "Manipur Chart | Madhur Matka | Manipur Satta Matka | Kalyan Result";
-$meta_description = "The official Manipur Chart portal. Get the fastest live results for Manipur Day and Night, verified historical charts, and expert matka guessing tips online.";
+$meta_description = "Manipur Chart Official - Get live results for Madhur Matka, Manipur Satta Matka, and Kalyan Result. Verified daily and night charts with the fastest online updates.";
 
 include 'includes/db.php';
 include 'includes/header.php';
