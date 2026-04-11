@@ -104,7 +104,7 @@ if (isset($conn) && !($conn->connect_error)) {
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Manipur Chart">
-    <link rel="manifest" href="<?= $base_url ?>manifest.json">
+    <link rel="manifest" href="<?= $base_url ?>manifest.json?v=4.0">
 
     <script>
         if ('serviceWorker' in navigator) {
@@ -141,18 +141,18 @@ if (isset($conn) && !($conn->connect_error)) {
             $update_date = date('c');
             ?>
             <script type="application/ld+json">
-                            {
-                              "@context": "https://schema.org",
-                              "@type": "SpecialAnnouncement",
-                              "name": "<?= $r['market_name'] ?> Live Result",
-                              "text": "Latest Result: <?= $full_res ?>",
-                              "datePosted": "<?= $update_date ?>",
-                              "announcementLocation": {
-                                "@type": "Place",
-                                "name": "Manipur Chart Official"
-                              }
-                            }
-                            </script>
+                                    {
+                                      "@context": "https://schema.org",
+                                      "@type": "SpecialAnnouncement",
+                                      "name": "<?= $r['market_name'] ?> Live Result",
+                                      "text": "Latest Result: <?= $full_res ?>",
+                                      "datePosted": "<?= $update_date ?>",
+                                      "announcementLocation": {
+                                        "@type": "Place",
+                                        "name": "Manipur Chart Official"
+                                      }
+                                    }
+                                    </script>
             <?php
         }
     }
@@ -163,29 +163,29 @@ if (isset($conn) && !($conn->connect_error)) {
     if ($current_page == 'index.php') {
         ?>
         <script type="application/ld+json">
-                {
-                  "@context": "https://schema.org",
-                  "@type": "FAQPage",
-                  "mainEntity": [
                     {
-                      "@type": "Question",
-                      "name": "How often are Manipur Chart results updated?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Results are updated instantly every time a market opens or closes. We provide 24/7 automated updates for Manipur Day and Night sessions."
-                      }
-                    },
-                    {
-                      "@type": "Question",
-                      "name": "Is the Manipur Night chart 100% accurate?",
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, our Manipur Night records and Panel Charts are verified against official records to ensure 100% historical accuracy for all players."
-                      }
+                      "@context": "https://schema.org",
+                      "@type": "FAQPage",
+                      "mainEntity": [
+                        {
+                          "@type": "Question",
+                          "name": "How often are Manipur Chart results updated?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Results are updated instantly every time a market opens or closes. We provide 24/7 automated updates for Manipur Day and Night sessions."
+                          }
+                        },
+                        {
+                          "@type": "Question",
+                          "name": "Is the Manipur Night chart 100% accurate?",
+                          "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, our Manipur Night records and Panel Charts are verified against official records to ensure 100% historical accuracy for all players."
+                          }
+                        }
+                      ]
                     }
-                  ]
-                }
-                </script>
+                    </script>
         <?php
     }
     ?>

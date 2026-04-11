@@ -1,4 +1,4 @@
-const CACHE_NAME = 'manipur-chart-v1';
+const CACHE_NAME = 'manipur-chart-v3';
 const STATIC_ASSETS = [
     'assets/css/style.css',
     'assets/images/icon-192.png',
@@ -41,7 +41,7 @@ self.addEventListener('fetch', event => {
                 return response || fetch(event.request);
             })
         );
-    } 
+    }
     // 2. For HTML Pages: Network-First (Ensures Results are always Live)
     else {
         event.respondWith(

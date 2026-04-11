@@ -1,7 +1,7 @@
 {
   "name": "Manipur Chart Official",
   "short_name": "Manipur Chart",
-  "description": "Fastest Manipur Day & Night Satta Matka Results",
+  "description": "Manipur Chart | Madhur Matka | Kalyan Result - Live Updates",
   "start_url": "/index",
   "display": "standalone",
   "background_color": "#1e1e1e",
@@ -33,7 +33,10 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["finance", "entertainment"],
+  "categories": [
+    "finance",
+    "entertainment"
+  ],
   "screenshots": [
     {
       "src": "assets/images/icon-512.png",
