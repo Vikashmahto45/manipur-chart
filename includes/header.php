@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
 // --- SILENT ROBOT TRIGGER: HANDS-OFF AUTOMATION ---
 if (isset($conn) && !($conn->connect_error)) {
     require_once __DIR__ . '/harvester.php';
@@ -93,9 +93,9 @@ if (isset($conn) && !($conn->connect_error)) {
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap"
         rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/download.png">
-    <link rel="shortcut icon" href="<?= $base_url ?>assets/images/download.png">
-    <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/icon-192.png">
+    <link rel="icon" type="image/png" href="<?= $base_url ?>assets/images/icon-192.png?v=3.0">
+    <link rel="shortcut icon" href="<?= $base_url ?>assets/images/icon-192.png?v=3.0">
+    <link rel="apple-touch-icon" href="<?= $base_url ?>assets/images/icon-192.png?v=3.0">
     <link rel="canonical" href="<?php echo $canonical_url; ?>">
     <link rel="stylesheet" href="<?= $base_url ?>assets/css/style.css?v=3.0">
 
@@ -138,21 +138,21 @@ if (isset($conn) && !($conn->connect_error)) {
         if ($recent_res && $recent_res->num_rows > 0) {
             $r = $recent_res->fetch_assoc();
             $full_res = $r['open_panna'] . "-" . $r['jodi'] . "-" . $r['close_panna'];
-            $update_date = date('c'); 
+            $update_date = date('c');
             ?>
             <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "SpecialAnnouncement",
-              "name": "<?= $r['market_name'] ?> Live Result",
-              "text": "Latest Result: <?= $full_res ?>",
-              "datePosted": "<?= $update_date ?>",
-              "announcementLocation": {
-                "@type": "Place",
-                "name": "Manipur Chart Official"
-              }
-            }
-            </script>
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "SpecialAnnouncement",
+                      "name": "<?= $r['market_name'] ?> Live Result",
+                      "text": "Latest Result: <?= $full_res ?>",
+                      "datePosted": "<?= $update_date ?>",
+                      "announcementLocation": {
+                        "@type": "Place",
+                        "name": "Manipur Chart Official"
+                      }
+                    }
+                    </script>
             <?php
         }
     }
@@ -163,29 +163,29 @@ if (isset($conn) && !($conn->connect_error)) {
     if ($current_page == 'index.php') {
         ?>
         <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
             {
-              "@type": "Question",
-              "name": "How often are Manipur Chart results updated?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Results are updated instantly every time a market opens or closes. We provide 24/7 automated updates for Manipur Day and Night sessions."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is the Manipur Night chart 100% accurate?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes, our Manipur Night records and Panel Charts are verified against official records to ensure 100% historical accuracy for all players."
-              }
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How often are Manipur Chart results updated?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Results are updated instantly every time a market opens or closes. We provide 24/7 automated updates for Manipur Day and Night sessions."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is the Manipur Night chart 100% accurate?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our Manipur Night records and Panel Charts are verified against official records to ensure 100% historical accuracy for all players."
+                  }
+                }
+              ]
             }
-          ]
-        }
-        </script>
+            </script>
         <?php
     }
     ?>
@@ -246,7 +246,8 @@ if (isset($conn) && !($conn->connect_error)) {
                     <div>
                         <div class="site-title"
                             style="margin: 0; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 24px; color: #fff;">
-                            <span class="highlight">MANIPUR</span> CHART</div>
+                            <span class="highlight">MANIPUR</span> CHART
+                        </div>
                         <span class="tagline">India's Fastest Satta Result</span>
                     </div>
                 </a>
@@ -280,7 +281,8 @@ if (isset($conn) && !($conn->connect_error)) {
                     <li><a href="<?= $base_url ?>all-pages">Archive</a></li>
                     <li><span class="separator">/</span></li>
                     <li class="active">
-                        <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Current Chart' ?></li>
+                        <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Current Chart' ?>
+                    </li>
                 <?php endif; ?>
             </ul>
         </div>
@@ -290,14 +292,17 @@ if (isset($conn) && !($conn->connect_error)) {
         <div class="container">
             <?php if ($clean_uri == "/index" || $clean_uri == "/"): ?>
                 <h1 class="dynamic-heading">
-                    <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h1>
+                    <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?>
+                </h1>
             <?php else: ?>
                 <h2 class="dynamic-heading">
-                    <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?></h2>
+                    <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?>
+                </h2>
             <?php endif; ?>
             <p class="hero-subtext">Check live, accurate, and fastest updates for
                 <?= isset($main_keyword) ? ucwords(str_replace('-', ' ', $main_keyword)) : 'Manipur Chart' ?> right
-                here!</p>
+                here!
+            </p>
 
             <div class="lucky-number-banner container"
                 style="text-align: center; margin: 15px auto; padding: 15px; background: linear-gradient(135deg, #1e1e1e 0%, #2f3640 100%); border: 2px dashed var(--primary-color); border-radius: 12px; box-shadow: 0 5px 20px rgba(247,183,49,0.15); max-width: 600px;">
