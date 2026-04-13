@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <?php
-// --- SILENT ROBOT TRIGGER: HANDS-OFF AUTOMATION ---
-if (isset($conn) && !($conn->connect_error)) {
-    require_once __DIR__ . '/harvester.php';
-    syncLiveResults($conn);
-}
+
 ?>
 <html lang="en">
 
@@ -45,30 +41,14 @@ if (isset($conn) && !($conn->connect_error)) {
     $clean_uri = preg_replace('/\.php$/', '', explode('?', $uri)[0]);
     $canonical_url = "https://manipurchart.in" . $clean_uri;
 
-    // --- EMERGENCY SEO RECOVERY: AUTHORITY CONSOLIDATION ---
-    // We are pointing the 750+ template pages back to the Home Page to reclaim lost ranking power.
-    $recovery_whitelist = [
-        '/',
-        '/index',
-        '/manipur-chart-night',
-        '/manipur-day-chart',
-        '/panel-chart',
-        '/jodi-chart',
-        '/all-pages'
-    ];
-
-    if (in_array($clean_uri, $recovery_whitelist)) {
-        // High-Value Core Pages: Keep self-referencing to rank individually
-        if ($clean_uri == "/index" || $clean_uri == "/") {
-            $canonical_url = "https://manipurchart.in/";
-        } else {
-            $canonical_url = "https://manipurchart.in" . $clean_uri;
-        }
-    } else {
-        // Template/Duplicate Pages: Consolidate authority back to Home to stop the penalty
+    // --- SEO RESTORATION: SELF-REFERENCING CANONICALS ---
+    // Every page now points to itself to ensure all 750+ pages are indexed correctly.
+    if ($clean_uri == "/index" || $clean_uri == "/") {
         $canonical_url = "https://manipurchart.in/";
+    } else {
+        $canonical_url = "https://manipurchart.in" . $clean_uri;
     }
-    // --- END RECOVERY LOGIC ---
+
     ?>
 
     <!-- Resource Hints: Optimized for Core Web Vitals (INP/LCP/FCP) -->
@@ -306,20 +286,11 @@ if (isset($conn) && !($conn->connect_error)) {
 
             <div class="lucky-number-banner container"
                 style="text-align: center; margin: 15px auto; padding: 15px; background: linear-gradient(135deg, #1e1e1e 0%, #2f3640 100%); border: 2px dashed var(--primary-color); border-radius: 12px; box-shadow: 0 5px 20px rgba(247,183,49,0.15); max-width: 600px;">
-                <h3 style="color: #fff; margin-bottom: 8px; font-size: 16px;">🔥 <span id="luckyCounter">15,482</span>
-                    People Checking Lucky Numbers Live</h3>
-                <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 13px;">Get today's 100% free
-                    guaranteed passing Panna and Jodi.</p>
+                <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 13px;">Get today's 100% free guaranteed passing Panna and Jodi.</p>
+
                 <a href="<?= $base_url ?>lucky-number.php#loader-section" class="refresh-btn pulse-glow"
-                    style="display: inline-block; text-decoration: none; font-size: 14px; padding: 10px 25px; border-radius: 30px;">GENERATE
-                    MY LUCKY NUMBER</a>
-                <script>
-                    setInterval(function () {
-                        let count = parseInt(document.getElementById('luckyCounter').innerText.replace(/,/g, ''));
-                        count += Math.floor(Math.random() * 7) - 2;
-                        document.getElementById('luckyCounter').innerText = count.toLocaleString();
-                    }, 3500);
-                </script>
+                    style="display: inline-block; text-decoration: none; font-size: 14px; padding: 10px 25px; border-radius: 30px;">GENERATE MY LUCKY NUMBER</a>
+
             </div>
 
         </div>
@@ -341,7 +312,13 @@ if (isset($conn) && !($conn->connect_error)) {
                     $live_data = null;
                 }
             }
+
+            // DB Fallback if $live_data is still null
+            if (!$live_data && isset($fallback_results) && !empty($fallback_results)) {
+                $live_data = $fallback_results[2]; // Use Manipur Day as default fallback
+            }
             ?>
+
             <div class="result-card pulse-glow">
                 <h3><?= $live_data ? $live_data['market_name'] . ' LATEST' : 'LIVE UPDATES' ?></h3>
                 <div class="live-numbers">

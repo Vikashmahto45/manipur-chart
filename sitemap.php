@@ -64,25 +64,17 @@ foreach ($files as $file) {
     if (empty($slug))
         continue;
 
-    // --- SITEMAP RECOVERY PRIORITIES ---
-    $priority = "0.6";
-    $changefreq = "weekly";
-
-    $whitelist_slugs = ['index', 'manipur-chart-night', 'manipur-day-chart', 'panel-chart', 'jodi-chart', 'all-pages'];
-
+    // --- SITEMAP RESTORATION: UNIFIED PRIORITIES ---
     if ($slug == "index") {
         $url = $base_url;
         $priority = "1.0";
         $changefreq = "always";
-    } elseif (in_array($slug, $whitelist_slugs)) {
-        $url = $base_url . $slug;
-        $priority = "0.9"; // Core Authority Pages
-        $changefreq = "daily";
     } else {
         $url = $base_url . $slug;
-        $priority = "0.4"; // Low priority during recovery
-        $changefreq = "monthly";
+        $priority = "0.8"; // Restore all market pages to high authority
+        $changefreq = "daily"; // Ensure Google crawls all updates daily
     }
+
 
     echo "  <url>" . PHP_EOL;
     echo "    <loc>" . htmlspecialchars($url) . "</loc>" . PHP_EOL;
