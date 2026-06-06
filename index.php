@@ -7,6 +7,10 @@ include 'includes/db.php';
 include 'includes/header.php';
 ?>
 
+<div class="test-upload-banner" style="background: #27ae60; color: #fff; text-align: center; padding: 10px; font-weight: bold; margin-bottom: 20px; border-radius: 5px; font-family: sans-serif;">
+    CODE UPLOAD TEST SUCCESSFUL - ANTIGRAVITY IDE
+</div>
+
 <section class="market-results-section">
     <!-- ELITE SEO: Live Countdown Timer (Increases Dwell Time) -->
     <div class="countdown-container"
